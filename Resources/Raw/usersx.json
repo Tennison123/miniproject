@@ -1,0 +1,172 @@
+[
+  {
+    "uid": "1001",
+    "email": "test@gmail.com",
+    "password": "1",
+    "profile": {
+      "name": "Do Bita",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "department": "ภาควิชาวิศวกรรมคอมพิวเตอร์",
+      "year": 2
+    },
+    "current_term_registration": [
+      {
+        "course_id": "CS101",
+        "course_name": "ความรู้เบื้องต้นวิทยาการคอมพิวเตอร์",
+        "credit": 3,
+        "grade": "F"
+      },
+      {
+        "course_id": "MATH101",
+        "course_name": "แคลคูลัส 1",
+        "credit": 4,
+        "grade": "D"
+      }
+    ],
+    "previous_terms_registration": [
+      {
+        "term": "1/2023",
+        "courses": [
+          {
+            "course_id": "PHY101",
+            "course_name": "ฟิสิกส์พื้นฐาน",
+            "credit": 4,
+            "grade": "B"
+          },
+          {
+            "course_id": "ENG101",
+            "course_name": "ภาษาอังกฤษเพื่อการสื่อสาร",
+            "credit": 3,
+            "grade": "A"
+          }
+        ]
+      },
+      {
+        "term": "2/2023",
+        "courses": [
+          {
+            "course_id": "CS102",
+            "course_name": "โครงสร้างข้อมูล",
+            "credit": 4,
+            "grade": "A"
+          },
+          {
+            "course_id": "MATH102",
+            "course_name": "แคลคูลัส 2",
+            "credit": 4,
+            "grade": "B+"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uid": "1002",
+    "email": "Chaibordin@gmail.com",
+    "password": "11",
+    "profile": {
+      "name": "Chaibordin Popanom",
+      "faculty": "คณะวิทยาศาสตร์",
+      "department": "ภาควิชาคณิตศาสตร์",
+      "year": 2
+    },
+    "current_term_registration": [
+      {
+        "course_id": "MATH201",
+        "course_name": "พีชคณิตเชิงเส้น",
+        "credit": 4,
+        "grade": ""
+      },
+      {
+        "course_id": "STAT101",
+        "course_name": "สถิติเบื้องต้น",
+        "credit": 3,
+        "grade": ""
+      }
+    ],
+    "previous_terms_registration": [
+      {
+        "term": "1/2023",
+        "courses": [
+          {
+            "course_id": "MATH101",
+            "course_name": "แคลคูลัส 1",
+            "credit": 4,
+            "grade": "A"
+          },
+          {
+            "course_id": "PHY101",
+            "course_name": "ฟิสิกส์พื้นฐาน",
+            "credit": 4,
+            "grade": "B"
+          }
+        ]
+      },
+      {
+        "term": "2/2023",
+        "courses": [
+          {
+            "course_id": "MATH102",
+            "course_name": "แคลคูลัส 2",
+            "credit": 4,
+            "grade": "A"
+          },
+          {
+            "course_id": "CS101",
+            "course_name": "ความรู้เบื้องต้นวิทยาการคอมพิวเตอร์",
+            "credit": 3,
+            "grade": "B+"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uid": "1003",
+    "email": "Momo@gmail.com",
+    "password": "111",
+    "profile": {
+      "name": "Momo Momo",
+      "faculty": "คณะศิลปศาสตร์",
+      "department": "ภาควิชาวรรณคดีอังกฤษ",
+      "year": 2
+    },
+    "current_term_registration": [],
+    "previous_terms_registration": [
+      {
+        "term": "1/2023",
+        "courses": [
+          {
+            "course_id": "ENG101",
+            "course_name": "ภาษาอังกฤษเพื่อการสื่อสาร",
+            "credit": 3,
+            "grade": "A"
+          },
+          {
+            "course_id": "PHIL101",
+            "course_name": "ปรัชญาพื้นฐาน",
+            "credit": 3,
+            "grade": "A-"
+          }
+        ]
+      },
+      {
+        "term": "2/2023",
+        "courses": [
+          {
+            "course_id": "ENG102",
+            "course_name": "การวิเคราะห์วรรณกรรม",
+            "credit": 3,
+            "grade": "B+"
+          },
+          {
+            "course_id": "HIST102",
+            "course_name": "ประวัติศาสตร์สมัยใหม่",
+            "credit": 3,
+            "grade": "A"
+          }
+        ]
+      }
+    ]
+  }
+]

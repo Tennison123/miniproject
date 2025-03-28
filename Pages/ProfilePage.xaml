@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.Pages.ProfilePage"
+             Title="Profile"
+             Shell.NavBarIsVisible="False"
+             xmlns:viewmodel="clr-namespace:MauiApp2.ViewModel"
+             x:DataType="viewmodel:ProfileViewModel">
+
+    <ContentPage.BindingContext>
+        <viewmodel:ProfileViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="t2.jpg"
+               Aspect="AspectFill"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"/>
+
+        <!-- Top Navigation -->
+        <Grid RowDefinitions="Auto"
+              ColumnDefinitions="*,*"
+              Padding="20,10">
+            <!-- Back Button -->
+            <Button Text="← กลับ"
+                    Command="{Binding GoBackCommand}"
+                    BackgroundColor="#FF2E16E2"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    WidthRequest="100"
+                    HeightRequest="40"
+                    HorizontalOptions="Start">
+                <Button.Shadow>
+                    <Shadow Brush="#40000000"
+                            Offset="3,3"
+                            Radius="5"/>
+                </Button.Shadow>
+            </Button>
+
+            <!-- Logout Button -->
+            <Button Text="ออกจากระบบ"
+                    Command="{Binding LogoutCommand}"
+                    BackgroundColor="#FF0000"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    WidthRequest="150"
+                    HeightRequest="40"
+                    HorizontalOptions="End"
+                    Grid.Column="1">
+                <Button.Shadow>
+                    <Shadow Brush="#40000000"
+                            Offset="3,3"
+                            Radius="5"/>
+                </Button.Shadow>
+            </Button>
+        </Grid>
+
+        <!-- Main Content - Centered Card Layout -->
+        <Frame VerticalOptions="Center"
+               HorizontalOptions="Center"
+               WidthRequest="380"
+               CornerRadius="25"
+               Padding="0"
+               BackgroundColor="#80FFFFFF"
+               BorderColor="#FFFBFBF4"
+               HasShadow="True">
+            
+            <VerticalStackLayout Spacing="0">
+                <!-- Profile Header -->
+                <BoxView Color="#FF1C58C1"
+                         HeightRequest="60"
+                         CornerRadius="25,25,0,0"/>
+                
+                <!-- Profile Picture -->
+                <Border HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HeightRequest="150"
+                        WidthRequest="150"
+                        StrokeShape="RoundRectangle 75,75,75,75"
+                        Stroke="White"
+                        StrokeThickness="3"
+                        Margin="0,-30">
+                    <Border.Shadow>
+                        <Shadow Brush="#40000000"
+                                Offset="5,5"
+                                Radius="10"/>
+                    </Border.Shadow>
+                    <Image Source="p1.jpg"
+                           Aspect="AspectFill"
+                           HeightRequest="145"
+                           WidthRequest="140"/>
+                </Border>
+
+                <!-- Profile Information -->
+                <VerticalStackLayout Spacing="15"
+                                     Padding="25,40,25,25">
+                    <Label Text="{Binding UserProfile.Name}"
+                           FontSize="22"
+                           TextColor="#333333"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                    
+                    <Grid ColumnDefinitions="Auto,*"
+                          RowDefinitions="Auto,Auto,Auto,Auto"
+                          RowSpacing="10"
+                          ColumnSpacing="15">
+                        
+                        <Label Text="📧"
+                               FontSize="18"
+                               Grid.Row="0"
+                               Grid.Column="0"/>
+                        <Label Text="{Binding UserEmail}"
+                               FontSize="16"
+                               Grid.Row="0"
+                               Grid.Column="1"/>
+                        
+                        <Label Text="🏛️"
+                               FontSize="18"
+                               Grid.Row="1"
+                               Grid.Column="0"/>
+                        <Label Text="{Binding UserProfile.Faculty}"
+                               FontSize="16"
+                               Grid.Row="1"
+                               Grid.Column="1"/>
+                        
+                        <Label Text="📚"
+                               FontSize="18"
+                               Grid.Row="2"
+                               Grid.Column="0"/>
+                        <Label Text="{Binding UserProfile.Department}"
+                               FontSize="16"
+                               Grid.Row="2"
+                               Grid.Column="1"/>
+                        
+                        <Label Text="🎓"
+                               FontSize="18"
+                               Grid.Row="3"
+                               Grid.Column="0"/>
+                        <Label Text="{Binding UserProfile.Year}"
+                               FontSize="16"
+                               Grid.Row="3"
+                               Grid.Column="1"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

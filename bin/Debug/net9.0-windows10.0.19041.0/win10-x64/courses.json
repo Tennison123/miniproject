@@ -1,0 +1,107 @@
+[
+  {
+    "course_id": "CS201",
+    "course_name": "การเขียนโปรแกรมขั้นสูง",
+    "credit": 3
+  },
+  {
+    "course_id": "CS202",
+    "course_name": "ระบบฐานข้อมูล",
+    "credit": 3
+  },
+  {
+    "course_id": "MATH201",
+    "course_name": "พีชคณิตเชิงเส้น",
+    "credit": 3
+  },
+  {
+    "course_id": "MATH202",
+    "course_name": "สมการเชิงอนุพันธ์",
+    "credit": 4
+  },
+  {
+    "course_id": "PHY201",
+    "course_name": "ฟิสิกส์สมัยใหม่",
+    "credit": 4
+  },
+  {
+    "course_id": "ENG201",
+    "course_name": "การเขียนเชิงวิชาการ",
+    "credit": 3
+  },
+  {
+    "course_id": "BIO201",
+    "course_name": "พันธุศาสตร์",
+    "credit": 4
+  },
+  {
+    "course_id": "CHEM201",
+    "course_name": "เคมีอินทรีย์",
+    "credit": 4
+  },
+  {
+    "course_id": "HIST201",
+    "course_name": "ประวัติศาสตร์เอเชียตะวันออกเฉียงใต้",
+    "credit": 3
+  },
+  {
+    "course_id": "ECON201",
+    "course_name": "เศรษฐศาสตร์จุลภาค",
+    "credit": 3
+  },
+  {
+    "course_id": "PHIL201",
+    "course_name": "จริยศาสตร์",
+    "credit": 3
+  },
+  {
+    "course_id": "PSY201",
+    "course_name": "จิตวิทยาพัฒนาการ",
+    "credit": 3
+  },
+  {
+    "course_id": "SOC201",
+    "course_name": "สังคมวิทยาชนบท",
+    "credit": 3
+  },
+  {
+    "course_id": "ART201",
+    "course_name": "ศิลปะไทยร่วมสมัย",
+    "credit": 2
+  },
+  {
+    "course_id": "MUS201",
+    "course_name": "ทฤษฎีดนตรี",
+    "credit": 2
+  },
+  {
+    "course_id": "POL201",
+    "course_name": "ความสัมพันธ์ระหว่างประเทศ",
+    "credit": 3
+  },
+  {
+    "course_id": "LAW201",
+    "course_name": "กฎหมายธุรกิจ",
+    "credit": 3
+  },
+  {
+    "course_id": "STAT201",
+    "course_name": "สถิติประยุกต์",
+    "credit": 3
+  },
+  {
+    "course_id": "ANTH201",
+    "course_name": "มานุษยวิทยาสังคม",
+    "credit": 3
+  },
+  {
+    "course_id": "GEOG201",
+    "course_name": "ภูมิศาสตร์มนุษย์",
+    "credit": 3
+  },
+  {
+    "course_id": "BUS201",
+    "course_name": "การจัดการองค์กร",
+    "credit": 3
+  }
+]

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.Pages.AddSubPage"
+             Title="Add Subject"
+             Shell.NavBarIsVisible="False"
+             xmlns:viewmodel="clr-namespace:MauiApp2.ViewModel"
+             xmlns:model="clr-namespace:MauiApp2.Model2"
+             x:DataType="viewmodel:AddSubViewModel">
+
+    <ContentPage.BindingContext>
+        <viewmodel:AddSubViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="Auto,Auto,Auto,*">
+        <!-- Background Image -->
+        <Image Source="t2.jpg"
+               Aspect="AspectFill"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"
+               Grid.RowSpan="4"/>
+
+        <!-- Top Section: Back Button and Student Name -->
+        <Grid Grid.Row="0"
+              ColumnDefinitions="*,*"
+              Padding="20,10"
+              BackgroundColor="Transparent">
+            <!-- Back Button -->
+            <Button Text="← กลับ"
+                    Command="{Binding GoBackCommand}"
+                    BackgroundColor="#FF6500F2"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    WidthRequest="100"
+                    HeightRequest="40"
+                    HorizontalOptions="Start">
+                <Button.Shadow>
+                    <Shadow Brush="#40000000"
+                            Offset="3,3"
+                            Radius="5"/>
+                </Button.Shadow>
+            </Button>
+
+            <!-- Student Name (Moved to top right) -->
+            <Label Grid.Column="1"
+                   Text="{Binding LoggedInUserName, StringFormat='👤 {0}'}"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="#FF494848"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center">
+                <Label.Shadow>
+                    <Shadow Brush="#40000000"
+                            Offset="2,2"
+                            Radius="4"/>
+                </Label.Shadow>
+            </Label>
+        </Grid>
+
+        <!-- Search Bar -->
+        <SearchBar Grid.Row="2"
+           Placeholder="🔍 ค้นหารายวิชาด้วยรหัสวิชา"
+           Text="{Binding SearchQuery, Mode=TwoWay}"
+           SearchCommand="{Binding SearchCommand}"
+           BackgroundColor="#E6FFFFFF" 
+           TextColor="#FF333333"  
+           PlaceholderColor="#FF808080"  
+           HorizontalOptions="Fill"
+           VerticalOptions="Center"
+           HeightRequest="50"
+           FontSize="16"
+           Margin="20,10,20,15"  
+           CancelButtonColor="#FF6500F2"> 
+    <SearchBar.Shadow>
+        <Shadow Brush="#40000000"
+                Offset="2,2"
+                Radius="4"/>
+    </SearchBar.Shadow>
+</SearchBar>
+
+        <!-- Courses List -->
+        <ScrollView Grid.Row="3"
+                    Padding="20">
+            <VerticalStackLayout Spacing="15">
+                <!-- Courses Header -->
+                <Label Text="📚 รายวิชาที่เปิดสอน"
+                       FontSize="25"
+                       FontAttributes="Bold"
+                       TextColor="#FF494848">
+                    <Label.Shadow>
+                        <Shadow Brush="#40000000"
+                                Offset="2,2"
+                                Radius="4"/>
+                    </Label.Shadow>
+                </Label>
+
+                <CollectionView ItemsSource="{Binding FilteredCourses}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Courses">
+                            <Border BackgroundColor="#805B3A3A"
+                                    StrokeShape="RoundRectangle 15,15,15,15"
+                                    Padding="15"
+                                    Margin="0,0,0,10">
+                                <Border.Shadow>
+                                    <Shadow Brush="#40000000"
+                                            Offset="3,3"
+                                            Radius="5"/>
+                                </Border.Shadow>
+                                <Grid>
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding CourseId, StringFormat='🆔 รหัสวิชา: {0}'}"
+                                               FontSize="18"
+                                               TextColor="White"/>
+                                        <Label Text="{Binding CourseName, StringFormat='📖 ชื่อวิชา: {0}'}"
+                                               FontSize="18"
+                                               TextColor="White"/>
+                                        <Label Text="{Binding Credit, StringFormat='📖 หน่วยกิต: {0}'}"
+                                               FontSize="18"
+                                               TextColor="White"/>
+                                    </VerticalStackLayout>
+                                    <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}"
+                                              HorizontalOptions="End"
+                                              VerticalOptions="Center"
+                                              Color="#00FF00"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Confirm Button (Moved to bottom right) -->
+        <Button Grid.Row="3"
+                Text="✅ ยืนยันการลงทะเบียน"
+                Command="{Binding ConfirmSelectionCommand}"
+                BackgroundColor="#FF3F8F3F"
+                TextColor="White"
+                FontSize="16"
+                FontAttributes="Bold"
+                CornerRadius="25"
+                WidthRequest="200"
+                HeightRequest="40"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="0,0,20,20">
+            <Button.Shadow>
+                <Shadow Brush="#40000000"
+                        Offset="3,3"
+                        Radius="5"/>
+            </Button.Shadow>
+        </Button>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.Pages.LoginPage"
+             Shell.NavBarIsVisible="False"
+             xmlns:viewmodel="clr-namespace:MauiApp2.ViewModel"
+             x:DataType="viewmodel:LoginViewModel"
+             Title="LoginPage">
+
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="t1.jpg"
+               Aspect="AspectFill"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"/>
+        
+        <!-- Dark overlay for better readability -->
+        <BoxView Color="#80000000" Opacity="0.3"/>
+
+        <!-- Main content -->
+        <VerticalStackLayout VerticalOptions="Center" 
+                            HorizontalOptions="Center" 
+                            Spacing="30"
+                            Padding="30"
+                            WidthRequest="400">
+
+            <!-- Header -->
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Login"
+                       FontAttributes="Bold"
+                       FontSize="50"
+                       TextColor="White"
+                       HorizontalOptions="Center"/>
+                
+                <Label Text="Hello World!!"
+                       FontSize="20"
+                       TextColor="#D0FFFFFF"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <!-- Input fields container -->
+            <Frame CornerRadius="20"
+                   Padding="25,30"
+                   BackgroundColor="#E6FFFFFF"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="25">
+
+                    <!-- Username field -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Username"
+                               FontSize="14"
+                               TextColor="#FF404040"
+                               Margin="5,0"/>
+                        
+                        <Frame CornerRadius="12"
+                               Padding="0"
+                               BorderColor="#20000000"
+                               HeightRequest="50">
+                            <Entry Text="{Binding Username}"
+                                   Placeholder="Enter your username"
+                                   BackgroundColor="Transparent"
+                                   TextColor="Black"
+                                   ClearButtonVisibility="WhileEditing"
+                                   FontSize="16"
+                                   Margin="15,0"/>
+                        </Frame>
+                    </VerticalStackLayout>
+
+                    <!-- Password field -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Password"
+                               FontSize="14"
+                               TextColor="#FF404040"
+                               Margin="5,0"/>
+                        
+                        <Frame CornerRadius="12"
+                               Padding="0"
+                               BorderColor="#20000000"
+                               HeightRequest="50">
+                            <Entry Text="{Binding Password}"
+                                   Placeholder="Enter your password"
+                                   IsPassword="True"
+                                   BackgroundColor="Transparent"
+                                   TextColor="Black"
+                                   FontSize="16"
+                                   Margin="15,0"/>
+                        </Frame>
+                    </VerticalStackLayout>
+
+                    <!-- Login button -->
+                    <Button Text="LOGIN"
+                            FontSize="18"
+                            BackgroundColor="#FFDC2121"
+                            TextColor="White"
+                            Command="{Binding LoginCommand}"
+                            HeightRequest="50"
+                            CornerRadius="25"
+                            FontAttributes="Bold"
+                            Margin="0,10"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Register link -->
+            <Label Text="Don't have an account? REGISTER"
+                   FontSize="14"
+                   TextColor="White"
+                   HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Don't have an account? " 
+                              TextColor="#D0FFFFFF"/>
+                        <Span Text="REGISTER" 
+                              TextColor="White"
+                              FontAttributes="Bold">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="RegisterPage"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
